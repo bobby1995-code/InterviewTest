@@ -1,0 +1,181 @@
+Question 1
+
+Write a locator (CSS selector/XPath) for the red form validation styling
+
+CSS locators
+
+input:invalid {
+    border-color: red;
+}
+
+input.error {
+    border-color: red;
+}
+
+Xpaths Examples 
+
+//input[contains(@class, 'error')]
+
+//input[contains(@style, 'border-color: red')]
+
+Please refer to Test1.py for more reference
+
+Question 2
+
+Find the console message printed
+
+Hello! I am in the done part of the ajax call
+
+
+Question 3
+
+Write a Selenium script to test that the factorial of 7 is 5040
+
+Please Refer to Test 2
+
+Question 4 
+
+Figure out the API call being made along with the headers and parameters sent
+
+API CALL = http://192.168.8.101:6464/factorial
+
+Headers:
+
+Accept: */*
+Accept-Encoding: gzip, deflate
+Accept-Language: en-ZA,en-GB;q=0.9,en-US;q=0.8,en;q=0.7
+Connection: keep-alive
+Content-Length: 8
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Cookie: _ga=GA1.1.864655945.1720022688; _gid=GA1.1.1411941137.1720022688; _ga_F2PLZ6GCDD=GS1.1.1720029300.2.1.1720029380.0.0.0
+DNT: 1
+Host: 192.168.8.101:6464
+Origin: http://192.168.8.101:6464
+Referer: http://192.168.8.101:6464/
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36
+X-Requested-With: XMLHttpRequest
+
+Parameters: The request includes form-encoded parameters in the body of the request, as indicated by Content-Type: application/x-www-form-urlencoded.
+
+
+Question 5 
+
+Bug Report
+
+Title: Incorrect Calculation of Factorials for Large Numbers
+
+Description:
+The web application fails to compute factorials accurately for numbers larger than 20. It either displays incorrect results or freezes when attempting calculations for numbers like 20! and beyond.
+
+Steps to Reproduce:
+
+Go to the web application at http://localhost:6464/
+Enter a number greater than 20 into the input field.
+Click the "Calculate" or "Get Factorial" button.
+Observe incorrect results or application freeze.
+Expected Behavior:
+The application should compute and display factorials accurately for numbers up to practical limits without errors or freezing.
+
+Actual Behavior:
+Factorial calculations for numbers exceeding 20 result in incorrect outputs or application freeze.
+
+Impact:
+This issue severely affects the application's core functionality related to mathematical computations beyond basic limits.
+
+Priority/Severity:
+
+Priority: Medium
+Severity: High
+Workaround:
+No workaround is currently available. Users must perform calculations manually outside of the application.
+
+Proposed Solution:
+Optimize the factorial calculation algorithm to handle larger numbers efficiently and accurately. Implement robust error handling for computations that exceed practical limits.
+
+Question 6 
+
+Test Case Document
+
+Test Case ID: TC001
+
+Test Case Title: Factorial Calculation for Large Numbers
+
+Test Objective: To verify that the web application accurately computes factorial values for numbers larger than 20.
+
+Preconditions:
+1. The web application is accessible and running at http://localhost:6464/.
+2. The factorial calculation feature is functional.
+
+Test Steps:
+1. Navigate to the web application at http://localhost:6464/.
+2. Enter the number 25 into the input field designated for factorial calculation.
+3. Click on the "Calculate" or "Get Factorial" button.
+4. Capture and record the displayed result.
+
+Expected Result:
+- The application should correctly compute and display the factorial of 25, which is 15511210043330985984000000.
+
+Actual Result:
+- Verify that the displayed result matches the expected factorial value of 25.
+
+Test Pass Criteria:
+- The displayed factorial value matches the expected result of 15511210043330985984000000.
+- The application remains responsive and does not freeze during the computation.
+
+Postconditions:
+- Ensure the application can handle and compute factorial values accurately for large numbers up to 25 without errors or performance issues.
+
+Severity: High
+
+Priority: Medium
+
+Question 7
+
+Include test coverage
+
+Test Coverage Document
+
+Feature: Factorial Calculation
+
+Module: Web Application
+
+Summary of What's Tested:
+
+1. Boundary Testing:
+   - Input Boundary Testing:
+     - We check really small numbers like 0 to see if the app handles them okay.
+     - We try numbers just above really small ones, like 1, 2, and 3, to see if it calculates correctly.
+     - We also test big numbers like 20 and 25 to see if the app can handle really large calculations.
+
+2. Functional Testing:
+   - We make sure the app does what it's supposed to with factorial calculations:
+     - It should compute factorials correctly for positive numbers.
+     - It needs to handle cases like factorial of 0 and 1 correctly.
+     - We check how it handles really big numbers like 20! and 25! to make sure it's accurate and fast.
+
+3. Error Handling Testing:
+   - We test how the app reacts when we give it bad inputs:
+     - Like putting letters instead of numbers to see if it shows the right error message.
+     - We check what happens when we put negative numbers to see if it tells us it's not possible.
+
+4. Performance Testing:
+   - We test how well the app works when lots of people use it at the same time:
+     - Checking if it slows down or crashes when many people calculate factorials together.
+     - We also run tests to see if it uses too much memory when doing calculations over a long time.
+
+5. User Interface (UI) Testing:
+   - We make sure the app looks and behaves right on the screen:
+     - Checking that all the buttons and input fields are easy to find and use.
+     - Making sure the result shows up in the right place on the screen after calculating.
+
+6. Integration Testing:
+   - We check how well the different parts of the app work together:
+     - Testing if the front part (what you see) and the back part (where calculations happen) talk to each other correctly.
+     - If there are other parts of the app that use factorial calculations, we make sure they work well together too.
+
+What We're Looking At:
+- How Much We Tested: We made sure to test everything we could think of.
+- What Problems We're Trying to Avoid: We want to make sure the app calculates factorials right every time and doesn't crash when lots of people use it.
+
+What We Found:
+- We found that the app works well for most things, but we're checking to make sure it handles really big numbers and bad inputs correctly.
